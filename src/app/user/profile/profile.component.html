@@ -1,0 +1,40 @@
+<div class="wrapper">
+    <div class="page-header page-header-small" filter-color="orange">
+        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg5.jpg') ;">
+        </div>
+        <div class="content-center" *ngIf="userDetails">
+            <div class="photo-container">
+                <img src={{userDetails.imageUrl}} alt="your pic">
+            </div>
+            <h3 class="title">{{userDetails.name}}</h3>
+            <p class="category">{{userDetails.email}}</p>
+        </div>
+    </div>
+</div>
+<div id="textareaTags">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="title">
+                <h4>Message:</h4>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <input class="form-control" name="name" [(ngModel)]='tagItems' maxlength="10" placeholder="You can write your text here..." />
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-round" (click)="insertDemo(tagItems)">Submit</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-5">
+            <div class="title">
+                <h4>Your Input</h4>
+            </div>
+            <ol>
+                <li *ngFor="let v of items">{{v.value}}</li>
+            </ol>
+
+        </div>
+    </div>
+</div>
